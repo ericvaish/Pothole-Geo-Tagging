@@ -13,6 +13,9 @@ We are using [GPS DEVICE]'s GPS Module to Log the GPS Location along with the Po
 ### 3. Storage
 We are using  Sandisk 1TB SSD to record all the Camera recordings as well as the GPS Log.
 
+### 4. Control
+We have 2 buttons for turning the log on and off. The 'on' Button is connected to the Power Button of the Raspberry Pi 5, and the 'off' button is sampled through the python video recording script.
+
 ### 4. Model 
 We are using 2 models, for different applications :
 - We have fine tuned the YOLO model to detect and Segment Potholes. The model also gives a classification to the type of pothole found. It has various classes like - loose gravel, speed breaker, Circular Pothole, Uneven manhole cover etc.
