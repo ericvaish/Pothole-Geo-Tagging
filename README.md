@@ -4,7 +4,7 @@ Software for our device which automatically provides geo tagged data along with 
 # Usage
 
 sudo apt install libcap-dev
-
+sudo apt install libcamera-dev
 
 # Our Setup:
 
