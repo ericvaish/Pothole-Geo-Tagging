@@ -27,8 +27,8 @@ if [ ! -f "fan.py" ]; then
     exit 1
 fi
 
-if [ ! -f "record.py" ]; then
-    echo "record.py not found in $SCRIPT_DIR."
+if [ ! -f "record2.py" ]; then
+    echo "record2.py not found in $SCRIPT_DIR."
     exit 1
 fi
 
@@ -40,10 +40,10 @@ if ! ps -p $FAN_PID > /dev/null; then
 fi
 echo "fan.py running with PID $FAN_PID"
 
-sudo python3 record.py "$OUTPUT_DIR" &
+sudo python3 record2.py "$OUTPUT_DIR" &
 RECORD_PID=$!
 if ! ps -p $RECORD_PID > /dev/null; then
-    echo "record.py failed to start."
+    echo "record2.py failed to start."
     exit 1
 fi
-echo "record.py running with PID $RECORD_PID"
+echo "record2.py running with PID $RECORD_PID"
