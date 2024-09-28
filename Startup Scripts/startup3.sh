@@ -1,9 +1,10 @@
 #!/bin/bash
+
 SCRIPT_DIR="/home/ericvaish/Pothole"
 SSD_MOUNT_POINT=$(lsblk -o NAME,MOUNTPOINT | grep -E "/media|/mnt" | awk '{print $2}' | head -n 1)
 
 if [ -z "$SSD_MOUNT_POINT" ]; then
-    echo "No SSD found. Please make sure the SSD is connected and mounted."
+    echo "No SSD found."
     exit 1
 fi
 
@@ -14,8 +15,35 @@ if [ ! -d "$OUTPUT_DIR" ]; then
     mkdir -p "$OUTPUT_DIR"
 fi
 
+if [ ! -d "$SCRIPT_DIR" ]; then
+    echo "Script directory $SCRIPT_DIR does not exist."
+    exit 1
+fi
+
 cd "$SCRIPT_DIR" || { echo "Failed to change directory to $SCRIPT_DIR"; exit 1; }
 
-# Run the Python scripts
+if [ ! -f "fan.py" ]; then
+    echo "fan.py not found in $SCRIPT_DIR."
+    exit 1
+fi
+
+if [ ! -f "record.py" ]; then
+    echo "record.py not found in $SCRIPT_DIR."
+    exit 1
+fi
+
 sudo python3 fan.py &
-sudo python3 record2.py "$OUTPUT_DIR" &
+FAN_PID=$!
+if ! ps -p $FAN_PID > /dev/null; then
+    echo "fan.py failed to start."
+    exit 1
+fi
+echo "fan.py running with PID $FAN_PID"
+
+sudo python3 record.py "$OUTPUT_DIR" &
+RECORD_PID=$!
+if ! ps -p $RECORD_PID > /dev/null; then
+    echo "record.py failed to start."
+    exit 1
+fi
+echo "record.py running with PID $RECORD_PID"
