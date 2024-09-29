@@ -6,6 +6,40 @@ Software for our device which automatically provides geo tagged data along with 
 sudo apt install libcap-dev
 sudo apt install libcamera-dev
 
+
+# Known Issues
+
+## - Raspberry Pi OS Lite
+1. Running the record2.py normally results in permission error.
+2. Running the record2.py through crontab shell results in "No Such process" error.
+
+## - Raspberry Pi OS
+1. Running the record2.py through GUI works fine.
+2. Running the shell script through GUI works fine.
+3. Running the shell script through crontab after reboot results in "No Such process" error.
+
+    Resources:
+    1. https://forums.raspberrypi.com/viewtopic.php?t=361758
+
+## - Ubuntu Server
+1. Unable to install Picamera2 library.
+- Followed the steps mentioned in the documentation of Picamera2, however multiple sudo apt installations showed 
+
+    Resources:
+    1. https://github.com/raspberrypi/picamera2/issues/563
+    2. https://github.com/raspberrypi/picamera2/issues/383
+    3. https://forums.raspberrypi.com/viewtopic.php?t=347172
+    4. https://stackoverflow.com/questions/52394543/e-unable-to-locate-package-python3-pip
+    
+
+
+## Potential Source for Solution
+- Github Issues Page on Picamera2
+1. https://github.com/search?q=repo%3Araspberrypi%2Fpicamera2+crontab&type=issues
+
+2. https://github.com/raspberrypi/picamera2/issues/816 (**)
+
+
 # Our Setup:
 
 ### 1. Recording
@@ -40,5 +74,5 @@ We provide all Potholes found in the survey, along with a number, score, and geo
 ### 8. Considerations / Tests
 
 1. Make sure time is getting updated(as the output video files save time as their name). We need to make sure time is getting updated to ensure no override of content. 
-2. Turn on hotspot automatically when raspi reboots. Source : https://www.raspberrypi.com/tutorials/host-a-hotel-wifi-hotspot/
+2. Turn on hotspot automatically when raspi reboots.Source : https://www.raspberrypi.com/tutorials/host-a-hotel-wifi-hotspot/
 3. Make sure the recordings are getting saved in the SSD.
