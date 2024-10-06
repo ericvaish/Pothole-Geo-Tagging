@@ -8,13 +8,13 @@ sudo apt install libcamera-dev
 
 # Demo
 
-[![Watch the video](http://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg)](https://youtu.be/xSB7NpzPcoU)
+[![Watch the Video](Markdown_Images/Ideal_Conditions.jpg)](https://youtu.be/xSB7NpzPcoU)
 
-[![Watch the video](http://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg)](https://youtu.be/4v8xGmHocmw)
+[![Watch the video](Markdown_Images/Challanging_Conditions_1.jpg)](https://youtu.be/4v8xGmHocmw)
 
-[![Watch the video](http://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg)](https://youtu.be/xzIqhlwG57M)
+[![Watch the video](Markdown_Images/Challanging_Conditions_2.jpg)](https://youtu.be/xzIqhlwG57M)
 
-[![Watch the video](http://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg)](https://youtu.be/1VXNcupkF2w)
+[![Watch the video](Markdown_Images/Pothole.jpg)](https://youtu.be/1VXNcupkF2w)
 
 
 # Our Setup:
